@@ -23,7 +23,7 @@ musicToggle.addEventListener('click', () => {
 
 // Auto-play attempt (some browsers block this)
 window.addEventListener('load', () => {
-    bgMusic.currentTime = 15;
+    bgMusic.currentTime = 25;
     bgMusic.play().then(() => {
         musicIcon.textContent = '🔊';
         musicToggle.classList.add('playing');
@@ -327,7 +327,7 @@ function handleYes() {
     
     // Navigate to final screen
     setTimeout(() => {
-        goToScreen(6);
+        goToScreen(7);
     }, 800);
 }
 
@@ -373,7 +373,7 @@ if (noBtn) {
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
     if (mainContent.classList.contains('active')) {
-        if (e.key === 'ArrowRight' && currentScreen < 6) {
+        if (e.key === 'ArrowRight' && currentScreen < 7) {
             goToScreen(currentScreen + 1);
         } else if (e.key === 'ArrowLeft' && currentScreen > 1) {
             goToScreen(currentScreen - 1);
@@ -396,7 +396,7 @@ document.addEventListener('touchend', (e) => {
 
 function handleSwipe() {
     if (mainContent.classList.contains('active')) {
-        if (touchEndX < touchStartX - 50 && currentScreen < 6) {
+        if (touchEndX < touchStartX - 50 && currentScreen < 7) {
             // Swipe left - next screen
             goToScreen(currentScreen + 1);
         }
